@@ -372,7 +372,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3957834, y: 3.0614748, z: 1}
+  m_LocalScale: {x: 2.395783, y: 3.0614748, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1846244108}
@@ -919,8 +919,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05941615, y: -0.026616175}
-  m_Size: {x: 0.98182076, y: 2.559675}
+  m_Offset: {x: -0.061611503, y: -0.007955478}
+  m_Size: {x: 0.93607986, y: 2.4931588}
   m_Direction: 0
 --- !u!23 &702890996
 MeshRenderer:
@@ -980,14 +980,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702890993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.87, y: 2.9782, z: -4.967079}
-  m_LocalScale: {x: 0.4174, y: 0.36747, z: 1}
+  m_LocalRotation: {x: -0.053021383, y: -0.0023384024, z: 0.00012416036, w: 0.99859065}
+  m_LocalPosition: {x: -5.8426, y: 2.9724, z: -4.938}
+  m_LocalScale: {x: 0.4620096, y: 0.37720793, z: 1.0265}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1846244108}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -6.079, y: -0.27, z: 0.029}
 --- !u!114 &702890999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,7 +1041,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.083877474, y: -1.5948031}
+  m_Offset: {x: -0.080667615, y: -1.841212}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1052,7 +1052,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1910326, y: 0.53835154}
+  m_Size: {x: 1.2364116, y: 0.8500838}
   m_EdgeRadius: 0
 --- !u!95 &702891001
 Animator:
@@ -1617,7 +1617,7 @@ Animator:
   m_GameObject: {fileID: 1846244107}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1f56a5bfe879a4b9bac926d910ccee9c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 035a7b00e37d74cf3b39d2580c1c746e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

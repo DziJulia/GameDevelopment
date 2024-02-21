@@ -24,12 +24,15 @@ public class CharacterControllerScript : MonoBehaviour
     {
         // looking for component with rigid body we can import or tag it here 
         myRb = GetComponent<Rigidbody2D>(); // look for component called Rigide Body 2D
-        
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // sets the speed parameter in the animator to the absolute value of the player's x velocity
+        anim.SetFloat("speed", Mathf.Abs(myRb.velocity.x));
+
         //if the absolute value of the input is greater than 0:1 and playr is not moving faster
         // we adding Mathf.Abs to do absolute value to check right and left
         // second statement we are checking about the speed that the character is not moving faster
