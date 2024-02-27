@@ -33,6 +33,15 @@ public class CharacterControllerScript : MonoBehaviour
         // sets the speed parameter in the animator to the absolute value of the player's x velocity
         anim.SetFloat("speed", Mathf.Abs(myRb.velocity.x));
 
+        if (Input.GetAxis("Horizontal") > 0.1f) //if the player moving to right
+        {
+            anim.transform.localScale = new Vector3(1, 1, 1); //set the scale of the player to 1,1,1
+        }
+        
+        if (Input.GetAxis("Horizontal") < -0.1f) //if the player moving to left
+        {
+            anim.transform.localScale = new Vector3(-1, 1, 1); //set the scale of the player to 1,1,1
+        }
         //if the absolute value of the input is greater than 0:1 and playr is not moving faster
         // we adding Mathf.Abs to do absolute value to check right and left
         // second statement we are checking about the speed that the character is not moving faster
