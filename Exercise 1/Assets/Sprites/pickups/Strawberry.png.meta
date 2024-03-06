@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c6c0ceea400c14f73891899c1c7b95bf
+guid: 4d12e9bece62b442e9b8337587ed33f3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bananas_0
+      name: Strawberry_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd9860221394843f78807ceb0a89743f
-      internalID: 2116394489
+      spriteID: c1edefbfc3dda413198ebc2a5ff6b23e
+      internalID: 893138936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_1
+      name: Strawberry_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23020549cad7045c68d698ed03ef3e91
-      internalID: -2073812360
+      spriteID: 52db8a50f4423472cb7b5f4df9fffc96
+      internalID: 866077565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_2
+      name: Strawberry_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bc6e4f4bf99e42128156653fe331a9f
-      internalID: 2004057097
+      spriteID: 3d502b075c01c4db9b0c6c82ad9bc47c
+      internalID: 1068245517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_3
+      name: Strawberry_3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3c94ae2f4a0b41c1b8ff3a8adf47ffe
-      internalID: 892033874
+      spriteID: 0bac1f6bc20d94f58b10329250d8c7c1
+      internalID: -1454082431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_4
+      name: Strawberry_4
       rect:
         serializedVersion: 2
         x: 128
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9804fba9c3b8c4b0e8ec9495e6cc90b8
-      internalID: -2012958831
+      spriteID: 8692cfbeece224002b7b3309e731949d
+      internalID: -574774478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_5
+      name: Strawberry_5
       rect:
         serializedVersion: 2
         x: 160
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92b82d22828ac45e1825895b96a764a0
-      internalID: -258735407
+      spriteID: 344724bb9c3254dc19435af9a2ced852
+      internalID: -1250304079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_6
+      name: Strawberry_6
       rect:
         serializedVersion: 2
         x: 192
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e8ecc00c916c4fddaed167e41629b1a
-      internalID: 2080461636
+      spriteID: f38939bf6bd1f44d192dbfa0caeae05d
+      internalID: -1178566724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_7
+      name: Strawberry_7
       rect:
         serializedVersion: 2
         x: 224
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f775561a5bc204a47b96c3fe851e7b67
-      internalID: -976164035
+      spriteID: f44cc6ba520c8492f947416269086173
+      internalID: -2044019669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_8
+      name: Strawberry_8
       rect:
         serializedVersion: 2
         x: 256
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae88b0c3a499f45d494b12faca8fd503
-      internalID: 136322752
+      spriteID: 6cf85cd26e77446be8d017795df0413c
+      internalID: 1179983451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_9
+      name: Strawberry_9
       rect:
         serializedVersion: 2
         x: 288
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f3a7aaaafa0841f7ba032b0b166b9b0
-      internalID: -1155621209
+      spriteID: f7368fdca4c1e47b9a9a91b3bc31ac5a
+      internalID: 1026262551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_10
+      name: Strawberry_10
       rect:
         serializedVersion: 2
         x: 320
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39a144d333db84a0b8b6d072678de460
-      internalID: -997734267
+      spriteID: c8711f33bbf6d404398dd6b1a6c021ed
+      internalID: 526957090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_11
+      name: Strawberry_11
       rect:
         serializedVersion: 2
         x: 352
@@ -368,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2021a714a2b6496091ba9e14ad173cc
-      internalID: 524905142
+      spriteID: 63fe4b182e374476ca6f2de696c50d84
+      internalID: 891959657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_12
+      name: Strawberry_12
       rect:
         serializedVersion: 2
         x: 384
@@ -389,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae119f07b440144f7b01354e76fa4d60
-      internalID: -776897699
+      spriteID: 63781bc315fa941ec9b47a8e9b463ddb
+      internalID: 1268441354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_13
+      name: Strawberry_13
       rect:
         serializedVersion: 2
         x: 416
@@ -410,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f560f0d090cc94e10ae119f38a29c92d
-      internalID: 1955437858
+      spriteID: 113c74f9f688843fb98c7a625ed0c6f3
+      internalID: 713953720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_14
+      name: Strawberry_14
       rect:
         serializedVersion: 2
         x: 448
@@ -431,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9519bc57eaa584e2c8499b584872d6d5
-      internalID: 1361550659
+      spriteID: 3eee3ab8c843840a98a8edfeecd04703
+      internalID: -652212864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_15
+      name: Strawberry_15
       rect:
         serializedVersion: 2
         x: 480
@@ -452,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e50429dffdb634643b01fa6506b83113
-      internalID: -739568226
+      spriteID: f58b32711e723420dbfeba27aa9d9d84
+      internalID: -1984465055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bananas_16
+      name: Strawberry_16
       rect:
         serializedVersion: 2
         x: 512
@@ -473,8 +473,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9689839b06264a54857076f61a9ff0d
-      internalID: 1009902816
+      spriteID: 9781c6b241693492a86c1865a80dc171
+      internalID: 172499073
       vertices: []
       indices: 
       edges: []
@@ -490,23 +490,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bananas_0: 2116394489
-      Bananas_1: -2073812360
-      Bananas_10: -997734267
-      Bananas_11: 524905142
-      Bananas_12: -776897699
-      Bananas_13: 1955437858
-      Bananas_14: 1361550659
-      Bananas_15: -739568226
-      Bananas_16: 1009902816
-      Bananas_2: 2004057097
-      Bananas_3: 892033874
-      Bananas_4: -2012958831
-      Bananas_5: -258735407
-      Bananas_6: 2080461636
-      Bananas_7: -976164035
-      Bananas_8: 136322752
-      Bananas_9: -1155621209
+      Strawberry_0: 893138936
+      Strawberry_1: 866077565
+      Strawberry_10: 526957090
+      Strawberry_11: 891959657
+      Strawberry_12: 1268441354
+      Strawberry_13: 713953720
+      Strawberry_14: -652212864
+      Strawberry_15: -1984465055
+      Strawberry_16: 172499073
+      Strawberry_2: 1068245517
+      Strawberry_3: -1454082431
+      Strawberry_4: -574774478
+      Strawberry_5: -1250304079
+      Strawberry_6: -1178566724
+      Strawberry_7: -2044019669
+      Strawberry_8: 1179983451
+      Strawberry_9: 1026262551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,14 @@ public class GameManager : MonoBehaviour
     public float playerhealth;
     public float playScore;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        // making sure that game manager dont destroy itself
+        // we keeping the same manager
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
        // player = GameObject.FindWithTag("Player");

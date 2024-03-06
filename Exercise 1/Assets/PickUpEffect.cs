@@ -14,6 +14,11 @@ public class PickUpEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void DestroyEffect()
+    {
         Destroy(gameObject);
     }
 }
