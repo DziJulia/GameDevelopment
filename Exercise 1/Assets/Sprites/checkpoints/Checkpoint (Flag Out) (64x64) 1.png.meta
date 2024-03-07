@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 62eee097a96b641898a799c4d78021b0
+guid: 5c5a013ff62f647d692f834726a5032a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_0
+      name: Checkpoint (Flag Out) (64x64) 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ff06aeca131d4cc6b3aa53333341ed3
-      internalID: -456477425
+      spriteID: 968f7eda2f0ad4abf947f960031b8c78
+      internalID: -1306713436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_1
+      name: Checkpoint (Flag Out) (64x64) 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c2666308057b4079853cba4091729e4
-      internalID: 920631672
+      spriteID: 1ec81df2b1a294cdc99f1f3af91328ec
+      internalID: 8132069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_2
+      name: Checkpoint (Flag Out) (64x64) 1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fc5b45c7679c424095f53146f7bac68
-      internalID: 2116527433
+      spriteID: 33149846de47b4005ac3e8b2816e80fa
+      internalID: -1103837005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_3
+      name: Checkpoint (Flag Out) (64x64) 1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca1b56c2ffc6249a1858787caeac65fe
-      internalID: 299671492
+      spriteID: 8923d638142a045c4b706542e13c556d
+      internalID: 1000014275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_4
+      name: Checkpoint (Flag Out) (64x64) 1_4
       rect:
         serializedVersion: 2
         x: 256
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77a77846e29e44405902dff73e1b80e3
-      internalID: 1067724807
+      spriteID: 3a641dcb39bec44dcaace9427d2bcdf0
+      internalID: 1324382751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_5
+      name: Checkpoint (Flag Out) (64x64) 1_5
       rect:
         serializedVersion: 2
         x: 320
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ae1eb92ee4b24259aa4a667dbaa9f23
-      internalID: -475697589
+      spriteID: 96a92775fc9dc4302b1496d7a172f629
+      internalID: 1033956474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_6
+      name: Checkpoint (Flag Out) (64x64) 1_6
       rect:
         serializedVersion: 2
         x: 384
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d81348600b674b169e75ba2b6471bff
-      internalID: -1179563826
+      spriteID: f6db81a139d9b467b93d7457d7e9778d
+      internalID: 2090490514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_7
+      name: Checkpoint (Flag Out) (64x64) 1_7
       rect:
         serializedVersion: 2
         x: 448
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb11d865152724be1879427a5f36c328
-      internalID: 2037629485
+      spriteID: e1b9cd52a16ee4f1090cf234339013a3
+      internalID: -980129409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_8
+      name: Checkpoint (Flag Out) (64x64) 1_8
       rect:
         serializedVersion: 2
         x: 512
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0647dcbd6f4d44959bbe1b844fdbe4e8
-      internalID: 1194823183
+      spriteID: c5ef81c18d99f44648cd622d0c0fca82
+      internalID: 1671562272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_9
+      name: Checkpoint (Flag Out) (64x64) 1_9
       rect:
         serializedVersion: 2
         x: 576
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33a12fa984c014147a6ef92abe0fafd5
-      internalID: 673029263
+      spriteID: 7bead465e8f574aaa9c1b37b8e679061
+      internalID: 496721847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_10
+      name: Checkpoint (Flag Out) (64x64) 1_10
       rect:
         serializedVersion: 2
         x: 640
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb573dbf5cbe8487cb467a7467d2e252
-      internalID: -655008084
+      spriteID: 2083817d36e9248ea94c73e5892c8267
+      internalID: -2134721749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_11
+      name: Checkpoint (Flag Out) (64x64) 1_11
       rect:
         serializedVersion: 2
         x: 704
@@ -368,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ba38f6121cc6453bb7727126301bc7b
-      internalID: 180724366
+      spriteID: 7de547f54ea5847af88d63b907675be1
+      internalID: -49954388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_12
+      name: Checkpoint (Flag Out) (64x64) 1_12
       rect:
         serializedVersion: 2
         x: 768
@@ -389,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b03494c984adb472d942809f0ff32f78
-      internalID: 1432966206
+      spriteID: 52a84182c1a974563a28eb71aa9d0689
+      internalID: -600350568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_13
+      name: Checkpoint (Flag Out) (64x64) 1_13
       rect:
         serializedVersion: 2
         x: 832
@@ -410,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 986bccfc9d3384236a7826f1d8f70a9d
-      internalID: -1426954273
+      spriteID: c6d97e3b2b4284985816140949b9b7fa
+      internalID: -1841301181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_14
+      name: Checkpoint (Flag Out) (64x64) 1_14
       rect:
         serializedVersion: 2
         x: 896
@@ -431,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 220c7826aa6ba40e5a4a986ceb76a045
-      internalID: -904399665
+      spriteID: 5ec14f00ff1e4434380e0d61853e7da8
+      internalID: 661767385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_15
+      name: Checkpoint (Flag Out) (64x64) 1_15
       rect:
         serializedVersion: 2
         x: 960
@@ -452,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74414c0109dfe4655a3de1ed501cb094
-      internalID: 1114486567
+      spriteID: cee9a78a561d44313a3ee487fa835b9d
+      internalID: 945446913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_16
+      name: Checkpoint (Flag Out) (64x64) 1_16
       rect:
         serializedVersion: 2
         x: 1024
@@ -473,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efb51d33264884d9181ae04a51fe8ed6
-      internalID: -997685212
+      spriteID: 4f5254a43789d48c38a9e3e90bc8fc31
+      internalID: 77071032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_17
+      name: Checkpoint (Flag Out) (64x64) 1_17
       rect:
         serializedVersion: 2
         x: 1088
@@ -494,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 130cdc6820538492da9338670651584e
-      internalID: 1425954086
+      spriteID: 6b82c6b2a16094d58a1dca7e9a7a2842
+      internalID: -1859488283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_18
+      name: Checkpoint (Flag Out) (64x64) 1_18
       rect:
         serializedVersion: 2
         x: 1152
@@ -515,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18a5ac789d72c4435ab9f6cdf3418906
-      internalID: 1815288914
+      spriteID: 8dc358b0a0bf34846bf3704f7bdd4393
+      internalID: 301971579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_19
+      name: Checkpoint (Flag Out) (64x64) 1_19
       rect:
         serializedVersion: 2
         x: 1216
@@ -536,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba25e548578a44859b67173ea9288675
-      internalID: -1009144779
+      spriteID: 29d127d3b05924295b2485fcdddd6ee7
+      internalID: 1139546405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_20
+      name: Checkpoint (Flag Out) (64x64) 1_20
       rect:
         serializedVersion: 2
         x: 1280
@@ -557,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c4fc46711ae54587a0f51a6da935e42
-      internalID: -296339892
+      spriteID: 3ae76795a7a2247c8b99fa36093893d5
+      internalID: 485473853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_21
+      name: Checkpoint (Flag Out) (64x64) 1_21
       rect:
         serializedVersion: 2
         x: 1344
@@ -578,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 825f9329dd5274f4699cfa5cfbf7ba4a
-      internalID: -1735488988
+      spriteID: 88948fae5c88445c1b7a7d589a4c9102
+      internalID: -542189135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_22
+      name: Checkpoint (Flag Out) (64x64) 1_22
       rect:
         serializedVersion: 2
         x: 1408
@@ -599,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bc8ed9c6685840eb9453740ad565b32
-      internalID: -1522532127
+      spriteID: 7fc2fcc0c75944939a6e68dde80c0b8b
+      internalID: -523158476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_23
+      name: Checkpoint (Flag Out) (64x64) 1_23
       rect:
         serializedVersion: 2
         x: 1472
@@ -620,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 627a317208cda4c619af8ce75e92171d
-      internalID: -1525292482
+      spriteID: b489c4203d6c248fd88c9d99ad8ddcbf
+      internalID: 511946167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_24
+      name: Checkpoint (Flag Out) (64x64) 1_24
       rect:
         serializedVersion: 2
         x: 1536
@@ -641,14 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51a3bcb63caf74d71bc995b878ee73e0
-      internalID: -210214440
+      spriteID: 4b2b04f5a0d374d6b8123acf7336b838
+      internalID: 1185588110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkpoint (Flag Out) (64x64)_25
+      name: Checkpoint (Flag Out) (64x64) 1_25
       rect:
         serializedVersion: 2
         x: 1600
@@ -662,8 +662,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e4b3ad7072cd44e1855caddf4ebae1c
-      internalID: 804785711
+      spriteID: eff04e2117d2c4b63a53a2e61e8f6e19
+      internalID: -999508983
       vertices: []
       indices: 
       edges: []
@@ -671,7 +671,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b065349c1f7944052921e2a8733b10d7
+    spriteID: 99d7c7f9fb61a4c0faf2ce38a92f03bf
     internalID: 0
     vertices: []
     indices: 
@@ -679,32 +679,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Checkpoint (Flag Out) (64x64)_0: -456477425
-      Checkpoint (Flag Out) (64x64)_1: 920631672
-      Checkpoint (Flag Out) (64x64)_10: -655008084
-      Checkpoint (Flag Out) (64x64)_11: 180724366
-      Checkpoint (Flag Out) (64x64)_12: 1432966206
-      Checkpoint (Flag Out) (64x64)_13: -1426954273
-      Checkpoint (Flag Out) (64x64)_14: -904399665
-      Checkpoint (Flag Out) (64x64)_15: 1114486567
-      Checkpoint (Flag Out) (64x64)_16: -997685212
-      Checkpoint (Flag Out) (64x64)_17: 1425954086
-      Checkpoint (Flag Out) (64x64)_18: 1815288914
-      Checkpoint (Flag Out) (64x64)_19: -1009144779
-      Checkpoint (Flag Out) (64x64)_2: 2116527433
-      Checkpoint (Flag Out) (64x64)_20: -296339892
-      Checkpoint (Flag Out) (64x64)_21: -1735488988
-      Checkpoint (Flag Out) (64x64)_22: -1522532127
-      Checkpoint (Flag Out) (64x64)_23: -1525292482
-      Checkpoint (Flag Out) (64x64)_24: -210214440
-      Checkpoint (Flag Out) (64x64)_25: 804785711
-      Checkpoint (Flag Out) (64x64)_3: 299671492
-      Checkpoint (Flag Out) (64x64)_4: 1067724807
-      Checkpoint (Flag Out) (64x64)_5: -475697589
-      Checkpoint (Flag Out) (64x64)_6: -1179563826
-      Checkpoint (Flag Out) (64x64)_7: 2037629485
-      Checkpoint (Flag Out) (64x64)_8: 1194823183
-      Checkpoint (Flag Out) (64x64)_9: 673029263
+      Checkpoint (Flag Out) (64x64) 1_0: -1306713436
+      Checkpoint (Flag Out) (64x64) 1_1: 8132069
+      Checkpoint (Flag Out) (64x64) 1_10: -2134721749
+      Checkpoint (Flag Out) (64x64) 1_11: -49954388
+      Checkpoint (Flag Out) (64x64) 1_12: -600350568
+      Checkpoint (Flag Out) (64x64) 1_13: -1841301181
+      Checkpoint (Flag Out) (64x64) 1_14: 661767385
+      Checkpoint (Flag Out) (64x64) 1_15: 945446913
+      Checkpoint (Flag Out) (64x64) 1_16: 77071032
+      Checkpoint (Flag Out) (64x64) 1_17: -1859488283
+      Checkpoint (Flag Out) (64x64) 1_18: 301971579
+      Checkpoint (Flag Out) (64x64) 1_19: 1139546405
+      Checkpoint (Flag Out) (64x64) 1_2: -1103837005
+      Checkpoint (Flag Out) (64x64) 1_20: 485473853
+      Checkpoint (Flag Out) (64x64) 1_21: -542189135
+      Checkpoint (Flag Out) (64x64) 1_22: -523158476
+      Checkpoint (Flag Out) (64x64) 1_23: 511946167
+      Checkpoint (Flag Out) (64x64) 1_24: 1185588110
+      Checkpoint (Flag Out) (64x64) 1_25: -999508983
+      Checkpoint (Flag Out) (64x64) 1_3: 1000014275
+      Checkpoint (Flag Out) (64x64) 1_4: 1324382751
+      Checkpoint (Flag Out) (64x64) 1_5: 1033956474
+      Checkpoint (Flag Out) (64x64) 1_6: 2090490514
+      Checkpoint (Flag Out) (64x64) 1_7: -980129409
+      Checkpoint (Flag Out) (64x64) 1_8: 1671562272
+      Checkpoint (Flag Out) (64x64) 1_9: 496721847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

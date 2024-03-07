@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
 
     public float playerhealth;
     public float playScore;
+    public Transform spawnPoint;
+    private bool hasCollided = false;
+    
     // Start is called before the first frame update
-
     private void Awake()
     {
         // making sure that game manager dont destroy itself
@@ -21,13 +23,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
        // player = GameObject.FindWithTag("Player");
-      //  playerSpawnPoint = GameObject.FindWithTag("Start");
+       spawnPoint = GameObject.FindGameObjectWithTag("Start").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player.transform.position == spawnPoint.position && hasCollided)
+        {
+            hasCollided = false;
+        }
     }
 
     public void AddScore(float score)
@@ -37,11 +43,17 @@ public class GameManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        playerhealth -= damage;
+        // Need to check if collided so it just only apply damage only once!
+        if (!hasCollided)
+        {
+            playerhealth -= damage;
+            Debug.Log("Damage Taken: " + damage + ", Remaining Health: " + playerhealth);
+            hasCollided = true;
+        }
     }
 
-    public void UpdateSpawnPoint(Transform newSpawnPoint)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-      //  playerSpawnPoint = newSpawnPoint;
+        hasCollided = false;
     }
 }
