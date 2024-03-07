@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterControllerScript : MonoBehaviour
 {
     public float maxSpeed;
-
     public float accelartion;
 
     public Rigidbody2D myRb;

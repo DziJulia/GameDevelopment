@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public float playerhealth;
     public float playScore;
     public Transform spawnPoint;
-    private bool hasCollided = false;
+    public GameObject player;
+    public bool hasCollided = false;
+    public bool isHit;
     
     // Start is called before the first frame update
     private void Awake()
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player.transform.position == spawnPoint.position && hasCollided)
         {
             hasCollided = false;
