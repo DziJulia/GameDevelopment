@@ -66030,11 +66030,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  gameManager: {fileID: 0}
   accelartion: 8
   myRb: {fileID: 0}
   jumpForce: 3
   isGrounded: 0
+  isHit: 0
   secondaryJumpForce: 5
   secondaryJumTime: 0.4
   anim: {fileID: 0}

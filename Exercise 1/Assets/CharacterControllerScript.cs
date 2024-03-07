@@ -11,6 +11,7 @@ public class CharacterControllerScript : MonoBehaviour
     public Rigidbody2D myRb;
     public float jumpForce;
     public bool isGrounded;
+    public bool isHit;
 
     public float secondaryJumpForce;
     public float secondaryJumTime;
@@ -79,6 +80,15 @@ public class CharacterControllerScript : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         isGrounded = false;
+        isHit = false;
+    }
+
+    public void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.CompareTag("Trap"))
+        {
+            isHit = true;
+        }
     }
 
     IEnumerator SecondaryJump()

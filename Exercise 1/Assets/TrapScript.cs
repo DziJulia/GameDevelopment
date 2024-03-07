@@ -16,6 +16,7 @@ public class TrapScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get CharacterControllerScript component of the player
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         // Get the Animator component
         animator = GetComponent<Animator>();
@@ -40,7 +41,6 @@ public class TrapScript : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.CompareTag("Player"))
         {
-            gameManager.isHit = true;
             gameManager.TakeDamage(damageValue);
             Vector2 collision = coll.contacts[0].normal;
 
