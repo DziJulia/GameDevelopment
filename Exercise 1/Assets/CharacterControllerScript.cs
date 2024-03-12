@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class CharacterControllerScript : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class CharacterControllerScript : MonoBehaviour
     public float jumpForce;
     public bool isGrounded;
     public bool isHit;
-
+    public int jumpCount;
     public float secondaryJumpForce;
     public float secondaryJumTime;
+    public float wallJumpForce;
+    public float wallJumpHorizontalForce;
+    public LayerMask wallLayer;
+    public float wallDetectionDistance;
 
     public Animator anim;
 
@@ -25,10 +30,11 @@ public class CharacterControllerScript : MonoBehaviour
         // looking for component with rigid body we can import or tag it here 
         myRb = GetComponent<Rigidbody2D>(); // look for component called Rigide Body 2D
         anim = GetComponentInChildren<Animator>();
+        jumpCount = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // sets the speed parameter in the animator to the absolute value of the player's x velocity
         anim.SetFloat("speed", Mathf.Abs(myRb.velocity.x));
@@ -51,7 +57,13 @@ public class CharacterControllerScript : MonoBehaviour
             // gets Input valuea nd multiplies it by accelaration int x direction
             myRb.AddForce(new Vector2(Input.GetAxis("Horizontal"),0)* accelartion, ForceMode2D.Force);
         }
+    }
 
+    void Update()
+    {
+        //For fall code
+        anim.SetFloat("jumping", jumpCount);
+        
         //For jump code
         if (isGrounded && Input.GetButton("Jump"))
         {
@@ -59,6 +71,7 @@ public class CharacterControllerScript : MonoBehaviour
             myRb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             // Add backgorund  threads
             StartCoroutine(SecondaryJump());
+            jumpCount++;
         }
 
         if (isGrounded == false && Input.GetButton("Jump"))
@@ -66,28 +79,29 @@ public class CharacterControllerScript : MonoBehaviour
             // while button is held, add a force in y direetion
             myRb.AddForce(new Vector2(0, secondaryJumpForce), ForceMode2D.Force);
         }
+        
         //end of jump code
     }
-
     // as long as collider is detected inside the trigger the player is grounded
     // to be more forgiving you can make it bigger
     private void OnTriggerStay2D(Collider2D other)
     {
         isGrounded = true;
+        jumpCount = 0;
     }
 
     // when the collider exist the trigger the player is no longer grounded
     private void OnTriggerExit2D(Collider2D other)
     {
         isGrounded = false;
-        isHit = false;
+        anim.SetBool("isHit", false);
     }
 
     public void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.CompareTag("Trap"))
         {
-            isHit = true;
+            anim.SetBool("isHit", true);
         }
     }
 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fall
+  m_Name: Walljump
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,8 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
+    - time: 0
+      value: {fileID: 374033659, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
     - time: 0.13333334
-      value: {fileID: 21300000, guid: be871d3e7369a413aa5acd05fc8487c5, type: 3}
+      value: {fileID: 922009482, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
+    - time: 0.28333333
+      value: {fileID: 80929603, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
+    - time: 0.48333332
+      value: {fileID: -951694031, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
+    - time: 0.6666667
+      value: {fileID: -1047431078, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
     attribute: m_Sprite
     path: charactersprite
     classID: 212
@@ -44,13 +52,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: be871d3e7369a413aa5acd05fc8487c5, type: 3}
+    - {fileID: 374033659, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
+    - {fileID: 922009482, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
+    - {fileID: 80929603, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
+    - {fileID: -951694031, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
+    - {fileID: -1047431078, guid: 9e6367ae5225147519618221c1a533d9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.15
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

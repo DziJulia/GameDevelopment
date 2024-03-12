@@ -8,6 +8,8 @@ TagManager:
   - Start
   - CheckPoint
   - Trap
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
