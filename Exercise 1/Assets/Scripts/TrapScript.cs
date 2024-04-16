@@ -41,7 +41,6 @@ public class TrapScript : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D coll) {
         if (coll.gameObject.CompareTag("Player"))
         {
-            gameManager.TakeDamage(damageValue);
             Vector2 collision = coll.contacts[0].normal;
 
             if (collision.y > 0.5) {

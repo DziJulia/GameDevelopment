@@ -8,7 +8,7 @@ public class CharacterControllerScript : MonoBehaviour
 {
     public float maxSpeed;
     public float accelartion;
-
+    public GameManager gameManager;
     public Rigidbody2D myRb;
     public float jumpForce;
     public bool isGrounded;
@@ -30,6 +30,7 @@ public class CharacterControllerScript : MonoBehaviour
         // looking for component with rigid body we can import or tag it here 
         myRb = GetComponent<Rigidbody2D>(); // look for component called Rigide Body 2D
         anim = GetComponentInChildren<Animator>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         jumpCount = 0;
     }
 
@@ -102,6 +103,16 @@ public class CharacterControllerScript : MonoBehaviour
         if (coll.gameObject.CompareTag("Trap"))
         {
             anim.SetBool("isHit", true);
+            StopCoroutine("HealthDecrementCoroutine");
+            StartCoroutine("HealthDecrementCoroutine"); 
+        }
+    }
+    
+    public void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.CompareTag("Trap"))
+        {
+            StopCoroutine("HealthDecrementCoroutine");
         }
     }
 
@@ -112,5 +123,23 @@ public class CharacterControllerScript : MonoBehaviour
         yield return new WaitForSeconds(secondaryJumTime);
         secondaryJump = false;
        // yield return null;
+    }
+    
+    // Coroutine for health decrement
+    IEnumerator HealthDecrementCoroutine()
+    {
+        while (true) // This will run indefinitely until stopped
+        {
+            if (gameManager.playerhealth > 0)
+            {
+                gameManager.playerhealth -= 1;
+            }
+            else
+            {
+                // Health is 0 or less, stop the coroutine and handle game over logic here
+                yield break;
+            }
+            yield return new WaitForSeconds(2f); // Wait for 1 second before next iteration
+        }
     }
 }
