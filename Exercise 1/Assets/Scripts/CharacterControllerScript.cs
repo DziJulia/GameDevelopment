@@ -66,7 +66,7 @@ public class CharacterControllerScript : MonoBehaviour
         anim.SetFloat("jumping", jumpCount);
         
         //For jump code
-        if (isGrounded && Input.GetButton("Jump"))
+        if (isGrounded && Input.GetButtonDown("Jump"))
         {
             // add force in the y direction
             myRb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
@@ -75,7 +75,7 @@ public class CharacterControllerScript : MonoBehaviour
             jumpCount++;
         }
 
-        if (isGrounded == false && Input.GetButton("Jump"))
+        if (isGrounded == false && Input.GetButtonDown("Jump"))
         {
             // while button is held, add a force in y direetion
             myRb.AddForce(new Vector2(0, secondaryJumpForce), ForceMode2D.Force);
