@@ -418,7 +418,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1993058216, guid: 90016b09f063949649597fd3a9e23ff7, type: 3}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 549550572}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -832,7 +832,7 @@ GameObject:
   - component: {fileID: 702891000}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -978,12 +978,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 24
-  accelartion: 20
+  accelartion: 60
+  gameManager: {fileID: 0}
   myRb: {fileID: 0}
-  jumpForce: 2
+  jumpForce: 30
   isGrounded: 0
+  isHit: 0
+  jumpCount: 0
   secondaryJumpForce: 5
   secondaryJumTime: 0.4
+  wallJumpForce: 0
+  wallJumpHorizontalForce: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wallDetectionDistance: 0
   anim: {fileID: 0}
   secondaryJump: 0
 --- !u!61 &702891000
@@ -1444,7 +1453,7 @@ Animator:
   m_GameObject: {fileID: 1363335614}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0fd33dc6d6bf748ae9bdb4e773de281a, type: 2}
+  m_Controller: {fileID: 9100000, guid: dab7264e54fc54e3c9b8064da316dba5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1455,6 +1464,57 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1555779443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555779445}
+  - component: {fileID: 1555779444}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1555779444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555779443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498d7fbaa3edc426d92a7aa1606990d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  playerhealth: 3
+  playScore: 0
+  spawnPoint: {fileID: 0}
+  player: {fileID: 0}
+  hasCollided: 0
+  isHit: 0
+--- !u!4 &1555779445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555779443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.8266988, y: 2.0807352, z: -2.508832}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1808759787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,3 +1658,4 @@ SceneRoots:
   - {fileID: 594550664}
   - {fileID: 1346519388}
   - {fileID: 702890998}
+  - {fileID: 1555779445}
