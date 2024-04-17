@@ -65080,7 +65080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1cf654c48414307a58b811d24317cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 745858705}
   scoreText: {fileID: 1409642304}
   healthText: {fileID: 1981125772}
 --- !u!4 &981264368
