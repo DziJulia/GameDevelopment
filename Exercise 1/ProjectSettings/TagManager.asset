@@ -10,6 +10,10 @@ TagManager:
   - Trap
   - Enemy
   - Wall
+  - BiggerPlayer
+  - CloseButton
+  - InstructionButton
+  - PowerUp
   layers:
   - Default
   - TransparentFX

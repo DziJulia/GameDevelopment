@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class GameManagerFinalProject : MonoBehaviour
 {
-    public GameManagerFinalProject gameManager;
-
     public float playerHealth;
     public float playScore;
-    // public Transform spawnPoint;
+    public Transform spawnPoint;
     public GameObject player;
-    public bool hasCollided = false;
-    public bool isHit;
+    public bool isPaused = false;
+    public FinalPlayerControllerScript playerObject;
+    public Vector3 originalScale;
+    public bool hasBeenPickedUp = false;
     
     // Start is called before the first frame update
     private void Awake()
@@ -24,20 +24,24 @@ public class GameManagerFinalProject : MonoBehaviour
 
     void Start()
     {
-       //  player = GameObject.FindWithTag("Player");
-       // spawnPoint = GameObject.FindGameObjectWithTag("Start").transform;
-    }
+        // These lines will find the new player, playerObject, and spawnPoint in the new scene
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<FinalPlayerControllerScript>();
+        spawnPoint = GameObject.FindGameObjectWithTag("Start").transform;
 
+        // This line will get the original scale of the new player object
+        originalScale = player.transform.localScale; 
+    }
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log("playScore: " + playScore);
-        Debug.Log("playerHealth: " + playerHealth);
-        // if (player.transform.position == spawnPoint.position && hasCollided)
-       // {
-       //     hasCollided = false;
-       // }
+        if (player == null && playerObject == null && playerObject == null)
+        {
+            hasBeenPickedUp = false;
+            spawnPoint = GameObject.FindGameObjectWithTag("Start").transform;
+            player = GameObject.FindGameObjectWithTag("Player");
+            playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<FinalPlayerControllerScript>();
+        }
     }
 
     public void AddScore(float score)
@@ -46,18 +50,16 @@ public class GameManagerFinalProject : MonoBehaviour
     }
 
     public void TakeDamage(float damage)
-    {
-        // Need to check if collided so it just only apply damage only once!
-        if (!hasCollided)
+    { 
+        playerHealth -= damage;
+        Debug.Log("Damage Taken: " + damage + ", Remaining Health: " + playerHealth);
+        if (hasBeenPickedUp)
         {
-            playerHealth -= damage;
-            Debug.Log("Damage Taken: " + damage + ", Remaining Health: " + playerHealth);
-            hasCollided = true;
+            hasBeenPickedUp = false;
+            playerObject.anim.SetFloat("Reverse", -1);
+            playerObject.anim.Play("ninjaGrow", 0, 1);
+            player.transform.localScale = originalScale;
+            playerObject.anim.SetFloat("Reverse", 1);
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        hasCollided = false;
     }
 }

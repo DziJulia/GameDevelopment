@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class PickUpFinal : MonoBehaviour
 {
-    public GameManager gameManager;
+    public GameManagerFinalProject gameManager;
     public GameObject pickUpEffect;
     //how much the pick up is worth
     public float scoreValue;
@@ -12,7 +12,7 @@ public class PickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerFinalProject>();
     }
 
     // Update is called once per frame
