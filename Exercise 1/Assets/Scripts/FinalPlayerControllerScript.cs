@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,7 +15,7 @@ public class FinalPlayerControllerScript : MonoBehaviour
     public int maxJumpCount = 2;
     public Animator anim;
     public bool canMove = true;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -118,7 +119,6 @@ public class FinalPlayerControllerScript : MonoBehaviour
 
     void Jump(float jumpForceFloat)
     {
-        Debug.Log("Jump Trigger Set");
         anim.SetTrigger("isJumping");
         myRb.velocity = new Vector2(myRb.velocity.x, 0);
         myRb.AddForce(Vector2.up * jumpForceFloat, ForceMode2D.Impulse);
@@ -138,10 +138,25 @@ public class FinalPlayerControllerScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D coll)
     {
+        if (coll.gameObject.CompareTag("TileMap"))
+        {
+            Debug.Log("GOROUND");
+        }
         if (coll.gameObject.CompareTag("Trap"))
         {
             StopCoroutine("HealthDecrementCoroutine");
             StartCoroutine("HealthDecrementCoroutine"); 
+        }
+        
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            if (transform.DotTest(coll.transform, Vector2.down))
+            {
+               // myRb.velocity = new Vector2(0, jumpForce / 2f);
+                
+                myRb.velocity = new Vector2(0, 15);
+                anim.SetTrigger("isJumping");
+            }
         }
     }
     
@@ -178,14 +193,12 @@ public class FinalPlayerControllerScript : MonoBehaviour
 
         // Pause or resume game based on the current pause state
         Time.timeScale = gameManager.isPaused ? 0 : 1;
-
-        // You might want to add UI elements or logic to indicate that the game is paused
     }
     
     // Function to restart the game
     void RestartGame()
     {
-        gameManager.playerHealth = 5;
+        gameManager.playerHealth = 3;
         gameManager.playScore = 0;
         // Reload the currently active scene
         Scene scene = SceneManager.GetActiveScene();
@@ -200,5 +213,66 @@ public class FinalPlayerControllerScript : MonoBehaviour
     {
         // Play the specified animation clip
         anim.Play(clip.name);
+    }
+
+    public void Death()
+    {
+        DisablePhysics();
+        if (gameManager.playerHealth > 0)
+        {
+            StartCoroutine(AnimateDead());
+        }
+
+        Invoke("ResetFromDead", 3f);
+    }
+    
+    private void DisablePhysics()
+    {
+        Collider2D[] colliders = GetComponents<Collider2D>();
+
+        foreach (Collider2D col in colliders)
+        {
+            col.enabled = false;
+        }
+
+        GetComponent<Rigidbody2D>().isKinematic = true;
+    }
+    
+    public void ResetFromDead()
+    {
+        myRb.velocity = Vector2.zero;
+        myRb.angularVelocity = 0f;
+        jumpCount = 0;
+        Collider2D[] colliders = GetComponents<Collider2D>();
+
+        foreach (Collider2D col in colliders)
+        {
+            col.enabled = true;
+        }
+
+        GetComponent<Rigidbody2D>().isKinematic = false;
+        Debug.Log("Rigidbody2D isKinematic: " + GetComponent<Rigidbody2D>().isKinematic);
+        Vector3 newPosition = gameManager.spawnPoint.position + new Vector3(0f, 5f, 0f);
+        
+        myRb.transform.position = newPosition;
+    }
+    
+    private IEnumerator AnimateDead()
+    {
+        float elapsed = 0f;
+        float duration = 3f;
+
+        float jumpVelocity = 10f;
+        float gravity = -36f;
+
+        Vector3 velocity = Vector3.up * jumpVelocity;
+
+        while (elapsed < duration)
+        {
+            transform.position += velocity * Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 }

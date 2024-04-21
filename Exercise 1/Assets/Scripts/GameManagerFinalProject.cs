@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManagerFinalProject : MonoBehaviour
 {
     public float playerHealth;
-    public float playScore;
+    public int playScore;
     public Transform spawnPoint;
     public GameObject player;
     public bool isPaused = false;
@@ -44,15 +44,25 @@ public class GameManagerFinalProject : MonoBehaviour
         }
     }
 
-    public void AddScore(float score)
+    public void AddScore()
     {
-        playScore += score;
+        playScore ++;
+        if (playScore == 100)
+        {
+            AddLife();
+            playScore = 0;
+        }
     }
 
-    public void TakeDamage(float damage)
-    { 
-        playerHealth -= damage;
-        Debug.Log("Damage Taken: " + damage + ", Remaining Health: " + playerHealth);
+    public void AddLife()
+    {
+        playerHealth++;
+    }
+
+    public void TakeDamage(bool hitBySomething = false)
+    {
+        playerHealth--;
+        
         if (hasBeenPickedUp)
         {
             hasBeenPickedUp = false;
@@ -61,5 +71,8 @@ public class GameManagerFinalProject : MonoBehaviour
             player.transform.localScale = originalScale;
             playerObject.anim.SetFloat("Reverse", 1);
         }
+        else {
+            playerObject.Death();
+        } 
     }
 }

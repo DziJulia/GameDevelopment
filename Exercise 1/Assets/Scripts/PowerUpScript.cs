@@ -8,37 +8,31 @@ public class PowerUpScript : MonoBehaviour
     public GameObject pickUpEffect;
     public FinalPlayerControllerScript player;
     public AnimationClip pickUpAnimation;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<FinalPlayerControllerScript>();
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerFinalProject>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player") && !gameManager.hasBeenPickedUp)
-        {
-            // Play pick up animation
-            StopCoroutine("PlayPickUpAnimation");
-            StartCoroutine("PlayPickUpAnimation");
-            // Set the flag to true once the power-up is picked up
-            gameManager.hasBeenPickedUp = true;
-            player.transform.localScale *= 2f;
-        }
-
         //checks if the object is picked up by the player
         if (col.gameObject.CompareTag("Player"))
         {
             //initiate pick up effect
             Instantiate(pickUpEffect, transform.position, transform.rotation);
+            if(!gameManager.hasBeenPickedUp)
+            { 
+                // Play pick up animation
+                StopCoroutine("PlayPickUpAnimation");
+                StartCoroutine("PlayPickUpAnimation");
+                // Set the flag to true once the power-up is picked up
+                gameManager.hasBeenPickedUp = true;
+                player.transform.localScale *= 1.5f;
+                
+            }
             Destroy(gameObject);
         }
     }
@@ -51,5 +45,4 @@ public class PowerUpScript : MonoBehaviour
         // Wait for the animation to finish
         yield return new WaitForSeconds(pickUpAnimation.length);
     }
-
 }

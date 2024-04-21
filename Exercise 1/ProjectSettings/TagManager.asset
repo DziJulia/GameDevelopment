@@ -14,17 +14,19 @@ TagManager:
   - CloseButton
   - InstructionButton
   - PowerUp
+  - TileMap
+  - Block
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - PowerUp
+  - Enemy
+  - Block
+  - Shell
   - 
   - 
   - 

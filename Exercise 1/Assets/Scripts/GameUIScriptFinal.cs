@@ -15,6 +15,7 @@ public class GameUIScriptFinal : MonoBehaviour
     public TMP_Text healthText;
     public Button closeButton;
     public Button instructionsButton;
+    private bool gameOverStatus;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class GameUIScriptFinal : MonoBehaviour
         panelPause.SetActive(false);
         gameOver.SetActive(false);
         gameManagerFinal = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerFinalProject>();
-
+        gameOverStatus = true;
         // Get references to buttons and set up click listeners
         closeButton.onClick.AddListener(HideInstructions);
         instructionsButton.onClick.AddListener(ToggleInstructions);
@@ -41,21 +42,33 @@ public class GameUIScriptFinal : MonoBehaviour
         
         if (gameManagerFinal.playerHealth == 0)
         {
+            gameOverStatus = false;
             ToggleGameOver();
             player.canMove = false;
         }
         // Pause the game when "P" key is pressed
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("P was Pressed ");
-            TogglePause();
+            if (gameOverStatus)
+            {
+                Debug.Log("P was Pressed ");
+                TogglePause();
+            }
         }
             
         // Restart the game when "R" key is pressed
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("R was Pressed ");
-            ToggleRestartGame();
+            if (gameOverStatus)
+            {
+                if (panelPause.activeSelf)
+                {
+                    panelPause.SetActive(false);
+                }
+
+                Debug.Log("R was Pressed ");
+                ToggleRestartGame();
+            }
         }
     }
     
@@ -131,7 +144,7 @@ public class GameUIScriptFinal : MonoBehaviour
         player.canMove = true;
         gameManagerFinal.hasBeenPickedUp = false;
         gameManagerFinal.playScore = 0;
-        gameManagerFinal.playerHealth = 5;
+        gameManagerFinal.playerHealth = 3;
     }
     
     // Method to handle quitting the game
@@ -147,6 +160,7 @@ public class GameUIScriptFinal : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         gameOver.SetActive(false);
+        gameOverStatus = true;
         Time.timeScale = 1;
     }
 }

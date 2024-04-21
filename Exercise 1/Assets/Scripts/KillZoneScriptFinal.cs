@@ -27,10 +27,13 @@ public class KillZoneScriptFinal : MonoBehaviour
         if (other.CompareTag("Player") && canTakeDamage)
         {
             Debug.Log("Player entered kill zone");
-            other.transform.position = gameManager.spawnPoint.position;
-            gameManager.TakeDamage(damageValue);
+            gameManager.TakeDamage();
             canTakeDamage = false; // Set canTakeDamage to false after taking damage
             Invoke("ResetDamage", 1f); // Reset canTakeDamage after 1 second
+        }
+        if (other.CompareTag("PowerUp") || other.CompareTag("Enemy") )
+        {
+            Destroy(other.gameObject);
         }
     }
     

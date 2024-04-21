@@ -26,7 +26,7 @@ public class PickUpFinal : MonoBehaviour
         //checks if the object is picked up by the player
         if (col.gameObject.CompareTag("Player"))
         {
-            gameManager.AddScore(scoreValue);
+            gameManager.AddScore();
             //initiate pick up effect
             Instantiate(pickUpEffect, transform.position, transform.rotation);
             Destroy(gameObject);
