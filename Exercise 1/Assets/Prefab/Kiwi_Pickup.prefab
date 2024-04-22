@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1f1c8b9bcbc4c74a72c3ce9e1fd4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthValue: 0
   gameManager: {fileID: 0}
   pickUpEffect: {fileID: 1775127796598501605, guid: fff426f4b885f420c8cdde4af093c93e, type: 3}
   scoreValue: 1

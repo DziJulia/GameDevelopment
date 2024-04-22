@@ -16,6 +16,10 @@ TagManager:
   - PowerUp
   - TileMap
   - Block
+  - LifePower
+  - DifPower
+  - YellowNinja
+  - BlueNinja
   layers:
   - Default
   - TransparentFX
@@ -27,7 +31,7 @@ TagManager:
   - Enemy
   - Block
   - Shell
-  - 
+  - YellowNinja
   - 
   - 
   - 

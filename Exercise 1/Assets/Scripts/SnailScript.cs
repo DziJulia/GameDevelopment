@@ -27,8 +27,11 @@ public class SnailScript : MonoBehaviour
             {
                 EnterShell();
             }
-            else
+            else if (gameManager.difPower)
             {
+                Hit();
+            }
+            else {
                 Debug.Log("EnterShell collision take damage");
                 gameManager.TakeDamage();
             }
@@ -52,12 +55,15 @@ public class SnailScript : MonoBehaviour
                 Vector2 direction = new Vector2(transform.position.x - other.transform.position.x, 0f);
                 PushShell(direction);
             }
-            else
+            else if (gameManager.difPower)
             {
+                Hit();
+            }
+            else {
                 gameManager.TakeDamage();
             }
         }
-        else if (!shelled && other.gameObject.layer == LayerMask.NameToLayer("Shell"))
+        else if (!shelled && other.gameObject.layer == LayerMask.NameToLayer("Shell") || other.gameObject.layer == LayerMask.NameToLayer("YellowNinja"))
         {
             Hit();
         }

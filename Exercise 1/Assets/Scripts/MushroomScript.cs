@@ -22,8 +22,11 @@ public class MushroomScript : MonoBehaviour
             {
                 Flatten();
             }
-            else
+            else if (gameManager.difPower)
             {
+                Hit();
+            }
+            else {
                 Debug.Log("Mushroom collision take damage");
                 gameManager.TakeDamage();
             }
@@ -32,7 +35,7 @@ public class MushroomScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Shell"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Shell") || other.gameObject.layer == LayerMask.NameToLayer("YellowNinja") )
         {
             Hit();
         }

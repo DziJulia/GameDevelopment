@@ -6,20 +6,13 @@ public class PickUpFinal : MonoBehaviour
 {
     public GameManagerFinalProject gameManager;
     public GameObject pickUpEffect;
-    //how much the pick up is worth
-    public float scoreValue;
     
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerFinalProject>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     
     private void OnTriggerEnter2D(Collider2D col)
     {

@@ -23,16 +23,26 @@ public class PowerUpScript : MonoBehaviour
         {
             //initiate pick up effect
             Instantiate(pickUpEffect, transform.position, transform.rotation);
-            if(!gameManager.hasBeenPickedUp)
+            if(!gameManager.hasBeenPickedUp && gameObject.CompareTag("BiggerPlayer"))
             { 
                 // Play pick up animation
                 StopCoroutine("PlayPickUpAnimation");
                 StartCoroutine("PlayPickUpAnimation");
                 // Set the flag to true once the power-up is picked up
                 gameManager.hasBeenPickedUp = true;
+                player.spritePurpleRenderer.enabled = true;
+                player.spriteBlueRenderer.enabled = false;
                 player.transform.localScale *= 1.5f;
-                
+                player.anim = player.animPurple;
+            } else if (gameObject.CompareTag("LifePower"))
+            {
+                gameManager.playerHealth++;
+            } else if (gameObject.CompareTag("DifPower"))
+            {
+                Debug.Log("POWER");
+                player.DifPower();
             }
+            
             Destroy(gameObject);
         }
     }

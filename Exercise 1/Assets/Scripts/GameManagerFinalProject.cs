@@ -11,8 +11,8 @@ public class GameManagerFinalProject : MonoBehaviour
     public GameObject player;
     public bool isPaused = false;
     public FinalPlayerControllerScript playerObject;
-    public Vector3 originalScale;
-    public bool hasBeenPickedUp = false;
+    public bool hasBeenPickedUp;
+    public bool difPower;
     
     // Start is called before the first frame update
     private void Awake()
@@ -28,9 +28,7 @@ public class GameManagerFinalProject : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent<FinalPlayerControllerScript>();
         spawnPoint = GameObject.FindGameObjectWithTag("Start").transform;
-
-        // This line will get the original scale of the new player object
-        originalScale = player.transform.localScale; 
+        Application.targetFrameRate = 60;
     }
     // Update is called once per frame
     void Update()
@@ -59,7 +57,7 @@ public class GameManagerFinalProject : MonoBehaviour
         playerHealth++;
     }
 
-    public void TakeDamage(bool hitBySomething = false)
+    public void TakeDamage(bool killZone = false)
     {
         playerHealth--;
         
@@ -68,11 +66,19 @@ public class GameManagerFinalProject : MonoBehaviour
             hasBeenPickedUp = false;
             playerObject.anim.SetFloat("Reverse", -1);
             playerObject.anim.Play("ninjaGrow", 0, 1);
-            player.transform.localScale = originalScale;
+            player.transform.localScale /= 1.5f;
             playerObject.anim.SetFloat("Reverse", 1);
+            playerObject.spritePurpleRenderer.enabled = false;
+            playerObject.spriteBlueRenderer.enabled = true;
+            playerObject.anim = playerObject.animBlue;
         }
-        else {
+        else if (!difPower){
             playerObject.Death();
-        } 
+        }
+
+        if (killZone)
+        {
+            playerObject.Death();
+        }
     }
 }

@@ -9,9 +9,12 @@ public class BlockItem : MonoBehaviour
         StartCoroutine(Animate());
     }
 
-
     private IEnumerator Animate()
     {
+        if (GetComponent<Rigidbody2D>() == null)
+        {
+            yield return null;
+        }
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         CircleCollider2D physicsCollider = GetComponent<CircleCollider2D>();
         BoxCollider2D triggerCollider = GetComponent<BoxCollider2D>();
@@ -23,25 +26,27 @@ public class BlockItem : MonoBehaviour
         spriteRenderer.enabled = false;
 
         float elapsed = 0f;
-        float duration = 0.5f;
+        float duration =  0.5f;
 
         yield return new WaitForSeconds(0.25f);
 
         spriteRenderer.enabled = true;
         
         Vector3 startPosition = transform.localPosition;
-        Vector3 endPosition = transform.localPosition + Vector3.up;
+        Vector3 endPosition = transform.localPosition + Vector3.up * 1.25f;
 
         while (elapsed < duration)
         {
             float t = elapsed / duration;
 
-            transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            transform.localPosition = Vector3.Lerp(startPosition, endPosition, t);
             elapsed += Time.deltaTime;
 
             yield return null;
         }
 
+        transform.localPosition = endPosition;
+            
         rigidbody.isKinematic = false;
         physicsCollider.enabled = true;
         triggerCollider.enabled = true;

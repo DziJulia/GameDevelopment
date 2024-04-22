@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9099, y: -1.5923, z: -0.020968057}
-  m_LocalScale: {x: 0.8002, y: 0.8355, z: 1}
+  m_LocalScale: {x: 0.9896873, y: 1.0939201, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -208,10 +208,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076495530047606117}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbc354e5ed4b54778bd066af4247ce09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 6268247712284174858}
-  deadSprite: {fileID: -1526999290, guid: b2c83d60a4c1547558413f232d46b282, type: 3}
+  deadSprite: {fileID: 0}
