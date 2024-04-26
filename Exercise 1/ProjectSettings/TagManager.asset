@@ -20,6 +20,9 @@ TagManager:
   - DifPower
   - YellowNinja
   - BlueNinja
+  - CameraChange
+  - TileMap2
+  - TileMap1
   layers:
   - Default
   - TransparentFX
@@ -32,8 +35,8 @@ TagManager:
   - Block
   - Shell
   - YellowNinja
-  - 
-  - 
+  - Backgorund
+  - TileMap
   - 
   - 
   - 

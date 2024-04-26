@@ -100,7 +100,7 @@ public class CharacterControllerScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.CompareTag("Trap"))
+        if (coll.gameObject.CompareTag("Trap") || coll.gameObject.CompareTag("Enemy") )
         {
             anim.SetBool("isHit", true);
             StopCoroutine("HealthDecrementCoroutine");
