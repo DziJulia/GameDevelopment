@@ -59,7 +59,6 @@ public class GameManagerFinalProject : MonoBehaviour
 
     public void TakeDamage(bool killZone = false)
     {
-        // Find the moving platform and reset it
         // Find all moving platforms and reset them
         var movingPlatforms = GameObject.FindObjectsOfType<MovingPlatform>();
         foreach (var movingPlatform in movingPlatforms)

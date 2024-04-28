@@ -192,7 +192,7 @@ public class FinalPlayerControllerScript : MonoBehaviour
         {
             if (gameManager.playerHealth > 0)
             {
-                gameManager.playerHealth -= 1;
+                gameManager.TakeDamage();
             }
             else
             {

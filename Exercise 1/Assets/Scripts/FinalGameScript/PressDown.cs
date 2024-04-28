@@ -4,7 +4,7 @@ using UnityEngine;
 public class PressDown : MonoBehaviour
 {
     public Animator buttonAnimator;
-    public LayerMask playerLayer;
+    public Animator blockAnim;
     private bool isColliding;
 
     private void Start()
@@ -19,6 +19,7 @@ public class PressDown : MonoBehaviour
         {
             isColliding = true;
             buttonAnimator.Play("Down");
+            blockAnim.Play("RiseUp");
         }
     }
 
@@ -31,12 +32,13 @@ public class PressDown : MonoBehaviour
     IEnumerator CheckCollision()
     {
         // Wait for 1 second
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         // If no collision is detected after 1 second, play the "Default" animation
         if (!isColliding)
         {
             buttonAnimator.Play("Default");
+            blockAnim.Play("Get Down");
         }
     }
 }

@@ -23,6 +23,8 @@ TagManager:
   - CameraChange
   - TileMap2
   - TileMap1
+  - Warning
+  - Pikatchu
   layers:
   - Default
   - TransparentFX
@@ -37,7 +39,7 @@ TagManager:
   - YellowNinja
   - Backgorund
   - TileMap
-  - 
+  - Trap
   - 
   - 
   - 

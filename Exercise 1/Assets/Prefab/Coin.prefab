@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1441098461900016070}
   - component: {fileID: 6028694309667340366}
   - component: {fileID: 7984050770315380857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coin
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1866760874, guid: dfd9a0fa0d09b4119a79f14a4e971d84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
