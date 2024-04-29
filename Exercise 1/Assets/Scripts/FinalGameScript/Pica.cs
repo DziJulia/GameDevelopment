@@ -18,7 +18,7 @@ public class Pica : MonoBehaviour
 
     public State enemyAIState;
     public float moveSpeed;
-    public float maxSpeed;
+    public Vector2 direction = Vector2.left;
     //speed of the enemy when chasing the player
     public float chaseSpeed; 
     private float speed;
@@ -41,32 +41,32 @@ public class Pica : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private void FixedUpdate()
+    {
+        if (_rb.Raycast(direction))
+        {
+            Debug.Log("Change to oposite");
+            direction = -direction;
+        }
+        
+        if (direction.x  > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1); 
+        }
+        
+        if (direction.x  < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1); 
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Transform playerTransform = player.transform;
-        Vector3 playerPosition = playerTransform.position;
-        Vector3 transformPosition = transform.position;
         anim.SetFloat("speed", speed);
-        
-        Vector2 direction = (playerPosition - transformPosition).normalized;
         direction.y = 0;
         _rb.velocity = direction * speed;
-        
-        // Determine the direction of the player
-        float playerDirection = playerPosition.x - transformPosition.x;
-
-        // If the player is to the right of the enemy
-        if (playerDirection > 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1); // Face left
-        }
-        // If the player is to the left of the enemy
-        else if (playerDirection < 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1); // Face right
-        }
 
         switch (enemyAIState)
         {
@@ -86,7 +86,7 @@ public class Pica : MonoBehaviour
                 speed = chaseSpeed;
                 break;
             case State.AggroIdle:
-                speed = 0;
+                // speed = 0;
                 //stayes in aggro mode for a set time before going back to idle
                 break;
         }
@@ -160,4 +160,14 @@ public class Pica : MonoBehaviour
             enemyAIState = State.Idle;
         }
     }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision is with a TileMap
+        if (collision.gameObject.CompareTag("TileMap") & enemyAIState == State.AggroIdle)
+        {
+            speed = 0;
+        }
+    }
+
 }
