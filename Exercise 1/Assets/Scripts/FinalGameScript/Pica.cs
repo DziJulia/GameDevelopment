@@ -166,7 +166,15 @@ public class Pica : MonoBehaviour
         // Check if the collision is with a TileMap
         if (collision.gameObject.CompareTag("TileMap") & enemyAIState == State.AggroIdle)
         {
-            speed = 0;
+            // Determine the direction of the collision
+            float direction = transform.position.x - collision.transform.position.x;
+
+            // If the collision is from the left or right
+            if (Mathf.Abs(direction) > Mathf.Abs(transform.position.y - collision.transform.position.y))
+            {
+                // Handle collision from the sides
+                speed = 0;
+            }
         }
     }
 
