@@ -23,6 +23,7 @@ public class FinalPlayerControllerScript : MonoBehaviour
     public Animator animPurple;
     public Animator animYellow;
     public Animator animBlue;
+    public Pica picachu;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class FinalPlayerControllerScript : MonoBehaviour
         jumpCount = 0;
         animBlue = anim;
         particleSystem.Stop();
+        picachu = GameObject.FindGameObjectWithTag("Pikatchu").GetComponent<Pica>();
     }
 
     // Update is called once per frame
@@ -171,6 +173,7 @@ public class FinalPlayerControllerScript : MonoBehaviour
                 myRb.velocity = new Vector2(0, 15);
                 anim.SetTrigger("isJumping");
                 StartCoroutine(DelayedLandTrigger());
+                picachu.Hit();
             }
         }
     }

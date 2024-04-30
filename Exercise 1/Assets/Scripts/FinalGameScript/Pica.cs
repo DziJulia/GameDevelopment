@@ -14,6 +14,7 @@ public class Pica : MonoBehaviour
         AggroIdle,
     }
 
+    public GameManagerFinalProject gameManager;
     public State enemyAIState;
     public float moveSpeed;
     public Vector2 direction = Vector2.left;
@@ -29,14 +30,19 @@ public class Pica : MonoBehaviour
     public bool playerDetected;
     private Rigidbody2D _rb;
     public GameObject ballPrefab;
-    public Transform tailPosition;
-    public float ballSpeed = 20f; 
+    public float ballSpeed = 20f;
+    public float tailP;
+    private bool shouldThrow;
+    public bool isThrowing;
+    public int picaLife = 5;
     
     void Start()
     {
         enemyAIState = State.Idle;
         _rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        tailP = transform.position.y;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerFinalProject>();
     }
 
     private void FixedUpdate()
@@ -52,12 +58,12 @@ public class Pica : MonoBehaviour
         
         if (direction.x  > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); 
+            transform.localScale = new Vector3(-2, 2, 2); 
         }
         
         if (direction.x  < 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); 
+            transform.localScale = new Vector3(2, 2, 2); 
         }
     }
 
@@ -72,14 +78,21 @@ public class Pica : MonoBehaviour
         switch (enemyAIState)
         {
             case State.Idle:
-                //do nothing
+                shouldThrow = true;
+                if (!isThrowing)
+                {
+                    StartCoroutine( IdleBallThrow());
+                }
+               
                 speed = 0;
                 break;
             case State.Patrol:
+                shouldThrow = false;
                 speed = moveSpeed;
                 // move the enemy
                 break;
             case State.DetectPlayer:
+                shouldThrow = false;
                 speed = 0;
                 //when player is detected, start a timer to chase the player
                 break;
@@ -87,6 +100,7 @@ public class Pica : MonoBehaviour
                 speed = chaseSpeed;
                 break;
             case State.AggroIdle:
+                shouldThrow = false;
                 // speed = 0;
                 //stayes in aggro mode for a set time before going back to idle
                 break;
@@ -159,6 +173,47 @@ public class Pica : MonoBehaviour
         {
             aggro = false;
             enemyAIState = State.Idle;
+        }
+    }
+    
+    IEnumerator IdleBallThrow()
+    {
+        isThrowing = true;
+        yield return new WaitForSeconds(3f);
+
+        if (!shouldThrow)
+        {
+            isThrowing = false;
+            yield break;
+        }
+        
+        anim.SetBool("ball", true);
+        anim.Play("Attac2");
+        yield return new WaitForSeconds(1f);
+
+        // Use the x-coordinate of Pica for the tail position
+        Vector3 tailPosition = new Vector3(transform.position.x, tailP, transform.position.z);
+        // Instantiate the ball at the tail position
+        GameObject ball = Instantiate(ballPrefab, tailPosition, Quaternion.identity);
+        // Get the Rigidbody2D component of the ball
+        Rigidbody2D ballRb = ball.GetComponent<Rigidbody2D>();
+
+        // Apply a force to the ball in the direction Pica is facing
+        ballRb.AddForce(direction * ballSpeed, ForceMode2D.Impulse);
+        
+        anim.SetBool("ball", false);
+        isThrowing = false;
+    }
+    
+    
+    public void Hit()
+    {
+        gameManager.playScore += 3;
+        picaLife--;
+        if (picaLife == 0)
+        {
+            GetComponent<DeadAnimationScript>().enabled = true;
+            Destroy(gameObject,3f);
         }
     }
 }

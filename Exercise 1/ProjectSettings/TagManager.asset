@@ -25,6 +25,7 @@ TagManager:
   - TileMap1
   - Warning
   - Pikatchu
+  - SideTileMap
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - Backgorund
   - TileMap
   - Trap
-  - 
+  - ElectroBall
   - 
   - 
   - 
