@@ -99,7 +99,7 @@ public class CameraScript : MonoBehaviour
         transform.position = newPosition;
 
         // Set the camera's zoom level
-        Camera.main.orthographicSize = 5.32f;
+        Camera.main.orthographicSize = 7.32f;
     }
 
     public void ResetCamera()
