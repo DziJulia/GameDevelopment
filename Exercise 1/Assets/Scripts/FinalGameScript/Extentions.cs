@@ -18,9 +18,6 @@ public static class Extentions
 
         RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction.normalized, distance, _layerMask);
         bool b = hit.rigidbody != rigidbody;
-        Debug.Log("hit bool" + b);
-        Debug.Log("hit hit body" + hit.rigidbody);
-        Debug.Log("hit pika" + rigidbody);
         return hit.collider != null && hit.rigidbody != rigidbody;
     }
     public static bool DotTest(this Transform transform, Transform other, Vector2 testDirection)

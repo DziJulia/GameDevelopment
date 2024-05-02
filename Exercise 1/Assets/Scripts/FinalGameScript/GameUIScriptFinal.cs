@@ -16,7 +16,10 @@ public class GameUIScriptFinal : MonoBehaviour
     public Button closeButton;
     public Button instructionsButton;
     private bool gameOverStatus;
-
+    public GameObject healthBar;
+    public GameObject winningScreen;
+    public Pica pica;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,9 @@ public class GameUIScriptFinal : MonoBehaviour
         newGamePanel.SetActive(false);
         panelPause.SetActive(false);
         gameOver.SetActive(false);
+        healthBar.SetActive(false);
+        winningScreen.SetActive(false);
+        
         gameManagerFinal = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerFinalProject>();
         gameOverStatus = true;
         // Get references to buttons and set up click listeners
@@ -68,6 +74,19 @@ public class GameUIScriptFinal : MonoBehaviour
 
                 Debug.Log("R was Pressed ");
                 ToggleRestartGame();
+            }
+        }
+        
+        if (pica.picaLife == 0)
+        {
+            // Activate the winning screen
+            winningScreen.SetActive(true);
+        
+            // Check for any key press
+            if (Input.anyKeyDown)
+            {
+                // Restart the game
+                RestartGame();
             }
         }
     }
@@ -142,9 +161,12 @@ public class GameUIScriptFinal : MonoBehaviour
         Invoke("RestartGame", 2);
         gameManagerFinal.isPaused = false;
         player.canMove = true;
+        pica.gameObject.layer = LayerMask.NameToLayer("Enemy");
+        winningScreen.SetActive(false);
         gameManagerFinal.hasBeenPickedUp = false;
         gameManagerFinal.playScore = 0;
         gameManagerFinal.difPower = false;
+        healthBar.SetActive(false);
         gameManagerFinal.playerHealth = 3;
     }
     
@@ -162,6 +184,8 @@ public class GameUIScriptFinal : MonoBehaviour
         SceneManager.LoadScene(scene.name);
         gameOver.SetActive(false);
         gameOverStatus = true;
+        pica.gameObject.layer = LayerMask.NameToLayer("Enemy");
+        healthBar.SetActive(false);
         gameManagerFinal.difPower = false;
         Time.timeScale = 1;
     }

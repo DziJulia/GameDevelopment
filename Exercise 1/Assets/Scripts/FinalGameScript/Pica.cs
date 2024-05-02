@@ -14,7 +14,7 @@ public class Pica : MonoBehaviour
         AggroIdle,
     }
 
-    public GameManagerFinalProject gameManager;
+    private GameManagerFinalProject gameManager;
     public State enemyAIState;
     public float moveSpeed;
     public Vector2 direction = Vector2.left;
@@ -35,16 +35,21 @@ public class Pica : MonoBehaviour
     private bool shouldThrow;
     public bool isThrowing;
     public int picaLife = 5;
+    private Vector3 initialPosition;
+    public bool firstThrow = true;
     
     void Start()
     {
         enemyAIState = State.Idle;
+        gameObject.layer = LayerMask.NameToLayer("Enemy");
         _rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         tailP = transform.position.y;
+        initialPosition = transform.position;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerFinalProject>();
     }
-
+    
+    
     private void FixedUpdate()
     {
         if (_rb.Raycast(direction))
@@ -79,7 +84,7 @@ public class Pica : MonoBehaviour
         {
             case State.Idle:
                 shouldThrow = true;
-                if (!isThrowing)
+                if (!isThrowing && !firstThrow)
                 {
                     StartCoroutine( IdleBallThrow());
                 }
@@ -205,6 +210,26 @@ public class Pica : MonoBehaviour
         isThrowing = false;
     }
     
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            //player falling down landing on head
+            if (other.transform.position.y > transform.position.y)
+            {
+                Hit();
+            }
+            else if (gameManager.difPower)
+            {
+                Hit();
+            }
+            else {
+                gameManager.TakeDamage();
+                StartCoroutine(ResetAfterDelay(3.5f));
+            }
+        }
+    }
+    
     
     public void Hit()
     {
@@ -212,8 +237,18 @@ public class Pica : MonoBehaviour
         picaLife--;
         if (picaLife == 0)
         {
-            GetComponent<DeadAnimationScript>().enabled = true;
+            gameObject.layer = LayerMask.NameToLayer("DeadPica");
             Destroy(gameObject,3f);
         }
+    }
+    
+    IEnumerator ResetAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        enemyAIState = State.Idle;
+        transform.position = initialPosition;
+        direction = Vector2.left;
+        // to give player a chance
+        firstThrow = true;
     }
 }

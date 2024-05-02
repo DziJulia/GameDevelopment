@@ -14,6 +14,9 @@ public class CameraScript : MonoBehaviour
     public FinalPlayerControllerScript playerMovement;
     private bool returningToPlayer = false; // Flag to check if the camera is returning to the player
     public bool cameraSet = false;
+    public int moveCount = 0;
+    public Pica pica;
+    public GameObject healthBar;
     
     private void Awake()
     {
@@ -85,6 +88,8 @@ public class CameraScript : MonoBehaviour
         // Trigger the warning and move the camera to Pikachu
         warningTriggered = true;
         playerMovement.canMove = false; // Disable player movement
+        pica.firstThrow = false;
+        healthBar.SetActive(true);
     }
 
     public void SetCameraPositionAndZoom()
@@ -100,6 +105,7 @@ public class CameraScript : MonoBehaviour
     public void ResetCamera()
     {
         Vector3 newPosition = transform.position;
+        moveCount = 0;
         newPosition.x = gameManager.spawnPoint.position.x;
         transform.position = newPosition;
         cameraSet = false;
