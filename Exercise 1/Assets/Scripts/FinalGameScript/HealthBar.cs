@@ -16,12 +16,13 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fillImage.color = new Color(1, 0.5f, 0); 
         slider.value = slider.maxValue - pica.picaLife;
         float lifePercentage = ((slider.value - pica.picaLife) / slider.value) * 100;
         Debug.Log(" flifePercentage" +  lifePercentage);
         if (lifePercentage >= 25) 
         {
-            fillImage.color = new Color(1, 0.5f, 0); // Orange
+            fillImage.color = Color.red;
         }
     }
 }
