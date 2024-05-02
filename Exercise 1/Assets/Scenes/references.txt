@@ -13,3 +13,6 @@ https://www.flaticon.com/free-icon/warning_2797387?term=attention&page=1&positio
 
 //GIT REPOSITORY
 https://github.com/DziJulia/GameDevelopment/tree/main
+
+//VIDEO LINK
+https://www.youtube.com/playlist?list=PLkrwRuujfY7_0LtP_LqLPdXYBcYqmomIP
